@@ -43,3 +43,9 @@ def sort_tuples(tuples_list):
 tuples_list = [(3, 'apple'), (1, 'banana'), (2, 'cherry')]
 sorted_tuples_list = sort_tuples(tuples_list)
 print(sorted_tuples_list)  # [(1, 'banana'), (2, 'cherry'), (3, 'apple')]
+
+
+# function is used to sort the list of points based on the second element of each tuple (i.e., the y-coordinate). 
+points = [(2, 5), (1, 8), (3, 3), (4, 7)]
+sorted_points = sorted(points, key=lambda point: point[1])
+print(sorted_points)  # Output: [(3, 3), (2, 5), (4, 7), (1, 8)]
