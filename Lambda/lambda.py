@@ -49,3 +49,13 @@ print(sorted_tuples_list)  # [(1, 'banana'), (2, 'cherry'), (3, 'apple')]
 points = [(2, 5), (1, 8), (3, 3), (4, 7)]
 sorted_points = sorted(points, key=lambda point: point[1])
 print(sorted_points)  # Output: [(3, 3), (2, 5), (4, 7), (1, 8)]
+
+
+# Write a function that takes in a list of strings representing numbers in binary format, and 
+# returns a list of integers representing the decimal equivalent of each binary number. 
+
+def binary_to_decimal(binary_list):
+    return list(map(lambda x: int(x, 2), binary_list))
+binary_list = ['1101', '1010', '1111']
+decimal_list = binary_to_decimal(binary_list)
+print(decimal_list)  # Output: [13, 10, 15]
