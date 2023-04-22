@@ -1,3 +1,39 @@
+# here are some useful NumPy tricks:
+
+# Create a diagonal matrix: np.diag([1,2,3])
+
+# Create an identity matrix: np.eye(3)
+
+# Reverse an array: arr[::-1]
+
+# Transpose an array: arr.T
+
+# Reshape an array: arr.reshape(2, 3)
+
+# Flatten a multi-dimensional array: arr.flatten()
+
+# Concatenate arrays horizontally: np.hstack((arr1, arr2))
+
+# Concatenate arrays vertically: np.vstack((arr1, arr2))
+
+# Find unique elements in an array: np.unique(arr)
+
+# Find the index of the maximum element in an array: np.argmax(arr)
+
+# Find the index of the minimum element in an array: np.argmin(arr)
+
+# Set print options for NumPy arrays: np.set_printoptions(precision=2, suppress=True)
+
+# Apply a function element-wise to an array: np.vectorize(func)(arr)
+
+# Rescale an array to a specified range: (arr - arr.min()) / (arr.max() - arr.min()) * (new_max - new_min) + new_min
+
+# Compute the dot product of two arrays: np.dot(arr1, arr2)
+
+
+
+
+
 # Write a function that takes a 2D NumPy array and finds the average of each row and column, and 
 # returns a new array with the row and column averages as the first and last rows and columns.
 import numpy as np
