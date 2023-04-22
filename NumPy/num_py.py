@@ -32,8 +32,6 @@
 
 
 
-
-
 # Write a function that takes a 2D NumPy array and finds the average of each row and column, and 
 # returns a new array with the row and column averages as the first and last rows and columns.
 import numpy as np
