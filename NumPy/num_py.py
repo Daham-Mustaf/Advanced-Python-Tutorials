@@ -48,3 +48,73 @@ a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
 similarity = cosine_similarity(a, b)
 print(similarity)
+
+# Write a function that takes a NumPy array and 
+# applies a non-linear function (such as the sigmoid function) to each element of the array.
+
+
+def sigmoid(x):
+    """Apply the sigmoid function to a NumPy array"""
+    return 1 / (1 + np.exp(-x))
+
+arr = np.array([1, 2, 3, 4, 5])
+result = sigmoid(arr)
+print(result)
+
+# Write a function that takes a 3D NumPy array and returns a new array where each element is the maximum value within a 2x2x2 sub-array centered around the corresponding element in the original array.
+import numpy as np
+
+def max_subarrays(arr):
+    # Get dimensions of input array
+    x, y, z = arr.shape
+    
+    # Create output array with dimensions reduced by 1 in each axis
+    out = np.zeros((x-1, y-1, z-1))
+    
+    # Iterate over each element in the output array and find the max value in the corresponding sub-array
+    for i in range(1, x):
+        for j in range(1, y):
+            for k in range(1, z):
+                subarray = arr[i-1:i+1, j-1:j+1, k-1:k+1]
+                out[i-1, j-1, k-1] = np.max(subarray)
+    
+    return out
+arr = np.array([[[1, 2, 3], [4, 5, 6], [7, 8, 9]],
+                [[10, 11, 12], [13, 14, 15], [16, 17, 18]],
+                [[19, 20, 21], [22, 23, 24], [25, 26, 27]]])
+
+result = max_subarrays(arr)
+
+print(result)
+
+# Write a function that takes a 2D NumPy array and a threshold value, and 
+# returns a new array where any value greater than the threshold is replaced with the threshold value.
+
+
+def threshold_array(arr, threshold):
+    return np.where(arr > threshold, threshold, arr)
+
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+thresholded = threshold_array(arr, 5)
+print(thresholded)
+
+# Write a function that takes a NumPy array and returns the indices of the top k largest elements in the array.
+
+
+def top_k_indices(arr, k):
+    # Flatten the array and get the indices that would sort the flattened array in descending order
+    sorted_indices = np.argsort(arr.ravel())[::-1]
+    
+    # Get the top k indices
+    top_k = sorted_indices[:k]
+    
+    # Convert the flattened indices back to row and column indices
+    row_indices, col_indices = np.unravel_index(top_k, arr.shape)
+    
+    # Return the row and column indices as a tuple of arrays
+    return row_indices, col_indices
+arr = np.array([[5, 3, 2], [9, 8, 7], [1, 4, 6]])
+top_k = top_k_indices(arr, 3)
+print(top_k)
+
+
